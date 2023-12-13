@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "function": {
+      "bedrocksummary": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}

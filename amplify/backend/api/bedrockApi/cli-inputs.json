@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/summary": {
+      "name": "/summary",
+      "lambdaFunction": "generateSummary",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

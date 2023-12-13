@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-exta-dev-230701-authRole",
+      "UnauthRoleArn": "arn:aws:iam::668868402368:role/amplify-exta-dev-230701-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::668868402368:role/amplify-exta-dev-230701-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-exta-dev-230701-deployment",
+      "UnauthRoleName": "amplify-exta-dev-230701-unauthRole",
+      "StackName": "amplify-exta-dev-230701",
+      "StackId": "arn:aws:cloudformation:us-east-1:668868402368:stack/amplify-exta-dev-230701/1f46ad40-97e3-11ee-95c1-0ed682f3fb75",
+      "AmplifyAppId": "d1vpytw0eq6ll5",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-exta-dev-230701-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "bedrocksummary": {
+          "deploymentBucketName": "amplify-exta-dev-230701-deployment",
+          "s3Key": "amplify-builds/bedrocksummary-596b444c706230553658-build.zip"
+        },
+        "generateSummary": {
+          "deploymentBucketName": "amplify-exta-dev-230701-deployment",
+          "s3Key": "amplify-builds/generateSummary-393737395a494753596e-build.zip"
+        }
+      },
+      "auth": {
+        "exta": {},
+        "userPoolGroups": {}
+      },
+      "api": {
+        "bedrockApi": {}
+      }
+    }
+  }
+}

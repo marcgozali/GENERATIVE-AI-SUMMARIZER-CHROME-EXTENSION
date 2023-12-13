@@ -1,0 +1,115 @@
+{
+  "api": {
+    "bedrockApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "generateSummary"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "exta": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "exta"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "bedrocksummary": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "generateSummary": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "bedrocksummary"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_bedrocksummary_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "bedrocksummary"
+        }
+      ]
+    },
+    "AMPLIFY_function_bedrocksummary_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "bedrocksummary"
+        }
+      ]
+    },
+    "AMPLIFY_function_generateSummary_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "generateSummary"
+        }
+      ]
+    },
+    "AMPLIFY_function_generateSummary_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "generateSummary"
+        }
+      ]
+    }
+  }
+}
